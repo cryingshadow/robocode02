@@ -96,6 +96,18 @@ public class TheBotOfOT extends AdvancedRobot {
         ahead( e.getDistance( ) / 2 );
     }
 
+    @Override
+    public void onHitByBullet( HitByBulletEvent e ) {
+        if ( mode != Mode.HIT ) {
+            setMode( Mode.HIT );
+            double degrees = getDegrees( );
+            turnLeft( degrees );
+            ahead( 20 );
+            turnRight( degrees );
+            ahead( 20 );
+            setMode( Mode.DEFAULT );
+        }
+    }
 
     @Override
     public void onHitWall( HitWallEvent e ) {
@@ -117,8 +129,8 @@ public class TheBotOfOT extends AdvancedRobot {
         }
     }
 
-    private void setMode(Mode mode) {
+    private void setMode( Mode mode ) {
         this.mode = mode;
-        setBodyColor( mode.getColor() );
+        setBodyColor( mode.getColor( ) );
     }
 }
