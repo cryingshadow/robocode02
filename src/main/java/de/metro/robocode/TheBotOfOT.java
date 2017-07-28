@@ -76,8 +76,7 @@ public class TheBotOfOT extends AdvancedRobot {
 
     @Override
     public void onHitWall( HitWallEvent e ) {
-        double turnAngle = e.getBearing( ) > 180 ? e.getBearing( ) - 180 : e.getBearing( ) + 180;
-        turnLeft( turnAngle );
+        turnLeft( 180 );
     }
 
     private boolean reactingOnRam = false;
