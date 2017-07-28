@@ -96,25 +96,11 @@ public class TheBotOfOT extends AdvancedRobot {
         ahead( e.getDistance( ) / 2 );
     }
 
-    @Override
-    public void onHitByBullet( HitByBulletEvent e ) {
-        if ( mode != Mode.HIT ) {
-            setMode( Mode.HIT );
-            stop( );
-            ahead( 100 );
-            turnLeft( 90 );
-            ahead( 100);
-            resume( );
-            setMode( Mode.DEFAULT );
-        }
-    }
 
     @Override
     public void onHitWall( HitWallEvent e ) {
         turnLeft( 180 );
     }
-
-    private boolean reactingOnRam = false;
 
     @Override
     public void onHitRobot( HitRobotEvent e ) {
