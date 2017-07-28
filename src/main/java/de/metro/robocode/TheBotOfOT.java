@@ -90,9 +90,10 @@ public class TheBotOfOT extends AdvancedRobot {
     private void targetRobot( final ScannedRobotEvent e ) {
         if ( e.getDistance( ) < 1000 ) {
             target( e );
+        } else {
+            turnRight( e.getBearing( ) );
+            ahead( e.getDistance( ) / 2 );
         }
-        turnRight( e.getBearing( ) );
-        ahead( e.getDistance( ) / 2 );
     }
 
     @Override
