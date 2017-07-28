@@ -75,6 +75,15 @@ public class TheBotOfOT extends AdvancedRobot {
     }
 
     @Override
+    public void onHitByBullet(HitByBulletEvent e) {
+        stop();
+        ahead( 50 );
+        turnLeft( 90 );
+        ahead( 50 );
+        resume();
+    }
+
+    @Override
     public void onHitWall( HitWallEvent e ) {
         turnLeft( 180 );
     }
