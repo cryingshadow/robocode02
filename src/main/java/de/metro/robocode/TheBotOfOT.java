@@ -34,6 +34,7 @@ public class TheBotOfOT extends AdvancedRobot {
         while ( true ) {
             if ( mode == Mode.DEFAULT ) {
                 turnRight( 360 );
+                turnRight( getDegrees() );
                 ahead( Math.random( ) * MAX_DISTANCE );
             }
         }
