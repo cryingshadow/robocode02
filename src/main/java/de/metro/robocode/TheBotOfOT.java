@@ -9,8 +9,7 @@ import java.awt.geom.Point2D;
 public class TheBotOfOT extends AdvancedRobot {
     private enum Mode {
         DEFAULT( Color.BLUE ),
-        RAM( Color.RED ),
-        HIT( Color.YELLOW );
+        RAM( Color.RED );
 
         private final Color color;
 
@@ -94,19 +93,6 @@ public class TheBotOfOT extends AdvancedRobot {
         }
         turnRight( e.getBearing( ) );
         ahead( e.getDistance( ) / 2 );
-    }
-
-    @Override
-    public void onHitByBullet( HitByBulletEvent e ) {
-        if ( mode != Mode.HIT ) {
-            setMode( Mode.HIT );
-            double degrees = getDegrees( );
-            turnLeft( degrees );
-            ahead( 20 );
-            turnRight( degrees );
-            ahead( 20 );
-            setMode( Mode.DEFAULT );
-        }
     }
 
     @Override
